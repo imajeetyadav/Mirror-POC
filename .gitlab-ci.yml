@@ -6,6 +6,6 @@ mirror-job:       # This job runs in the build stage, which runs first.
   stage: mirror
   script:
     - git fetch --all
-    - git push --no-verify --mirror https://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@github.com/imAjeetYadav/Gitlab-mirror-POC.git
+    - git push --mirror https://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@github.com/imAjeetYadav/Gitlab-mirror-POC.git
 
 
