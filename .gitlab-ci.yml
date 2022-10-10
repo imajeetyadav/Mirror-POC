@@ -13,7 +13,7 @@ mirror-job:       # This job runs in the build stage, which runs first.
     # - git push --force mirror 
     - git remote set-url --push origin https://${TOKEN}@github.com/imAjeetYadav/Gitlab-mirror-POC.git
     # - git push --force --delete main --mirror
-    - git push origin --force 
+    - git push origin --force HEAD:main
 
 
 
