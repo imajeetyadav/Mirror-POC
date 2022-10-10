@@ -5,11 +5,14 @@ stages:          # List of stages for jobs, and their order of execution
 mirror-job:       # This job runs in the build stage, which runs first.
   stage: mirror
   script:
-    - git config --global credential.username imajeetyadav
-    - git config --global core.askPass /cred-helper.sh
-    - git config --global credential.helper cache
-    - git remote add mirror https://${TOKEN}@github.com/imAjeetYadav/Gitlab-mirror-POC.git
-    - git remote get-url --all mirror 
-    - git push --force mirror 
+    # - git config --global credential.username imajeetyadav
+    # - git config --global core.askPass /cred-helper.sh
+    # - git config --global credential.helper cache
+    # - git remote add mirror https://${TOKEN}@github.com/imAjeetYadav/Gitlab-mirror-POC.git
+    # - git remote get-url --push mirror 
+    # - git push --force mirror 
+    - git remote set-url --push https://${TOKEN}@github.com/imAjeetYadav/Gitlab-mirror-POC.git
+    - git push --mirror
+
 
 
