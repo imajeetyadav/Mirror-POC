@@ -13,7 +13,7 @@ mirror-job:       # This job runs in the build stage, which runs first.
     # - git push --force mirror 
     
     - mkdir mirror && cd mirror  
-    - git clone -mirror CI_REPOSITORY_URL
+    - git clone --mirror CI_REPOSITORY_URL
     # - git fetch --all
     # - git config  user.name "imAjeetYadav" --replace-all
     # - git config  user.email "ajeetyadav164@gmail.com" --replace-all
