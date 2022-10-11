@@ -15,7 +15,10 @@ mirror-job:       # This job runs in the build stage, which runs first.
     #- mkdir mirror && cd mirror
 
     - git fetch --all
-    - git remote set-url origin https://imajeetyadav:${TOKEN}@github.com/imAjeetYadav/Gitlab-mirror-POC.git
+    - git config --global credential.username imajeetyadav
+    - git config --global core.askPass /cred-helper.sh
+    - git config --global credential.helper cache
+    - git remote set-url origin https://{TOKEN}@github.com/imAjeetYadav/Gitlab-mirror-POC.git
     # - git clone --bare https://gitlab.com/imajeetyadav/mirror-poc.git
     - git push -f --mirror origin
     # - git push --force --delete main --mirror
