@@ -11,7 +11,7 @@ mirror-job:       # This job runs in the build stage, which runs first.
     # - git remote add mirror https://${TOKEN}@github.com/imAjeetYadav/Gitlab-mirror-POC.git
     # - git remote get-url --push mirror 
     # - git push --force mirror 
-    - mkdir mirror $$ cd mirror
+    - mkdir mirror && cd mirror
     - git clone --bare https://gitlab.com/imajeetyadav/mirror-poc.git
     - git push --mirror https://${TOKEN}@github.com/imAjeetYadav/Gitlab-mirror-POC.git
     # - git push --force --delete main --mirror
