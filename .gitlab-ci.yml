@@ -14,6 +14,7 @@ mirror-job:       # This job runs in the build stage, which runs first.
     
     - mkdir mirror && cd mirror  
     - git clone --mirror $CI_REPOSITORY_URL
+    - echo ${TOKEN}
     # - git fetch --all
     # - git config  user.name "imAjeetYadav" --replace-all
     # - git config  user.email "ajeetyadav164@gmail.com" --replace-all
