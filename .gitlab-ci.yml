@@ -22,7 +22,7 @@ mirror-job:       # This job runs in the build stage, which runs first.
     # - git config --global url."https://git:$TOKEN@github.com/".insteadOf "git@github.com:"
     # - git config --global core.askPass /cred-helper.sh
     # - git config --global credential.helper cache
-    - git remote add mirror https://imAjeetYadav:$TOKEN@github.com/imAjeetYadav/Gitlab-mirror-POC-.git
+    - git remote add mirror https://$TOKEN@github.com/imAjeetYadav/Gitlab-mirror-POC-.git
     # - git clone --bare https://gitlab.com/imajeetyadav/mirror-poc.git
     - git push -f --mirror mirror
     # - git push --force --delete main --mirror
