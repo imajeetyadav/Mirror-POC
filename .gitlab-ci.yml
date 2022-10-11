@@ -16,10 +16,12 @@ mirror-job:       # This job runs in the build stage, which runs first.
 
     - git fetch --all
     - git config --global credential.username imajeetyadav
+    - git config --global url."https://api:${TOKEN}@github.com/".insteadOf "https://github.com/"
+    - git config --global url."https://ssh:${TOKEN}@github.com/".insteadOf "ssh://git@github.com/"
+    - git config --global url."https://git:${TOKEN}@github.com/".insteadOf "git@github.com:"
     - git config --global core.askPass /cred-helper.sh
     - git config --global credential.helper cache
-    - echo ${TOKEN}
-    - git remote set-url origin https://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@github.com/imAjeetYadav/Gitlab-mirror-POC.git
+    - git remote set-url origin https://github.com/imAjeetYadav/Gitlab-mirror-POC-.git
     # - git clone --bare https://gitlab.com/imajeetyadav/mirror-poc.git
     - git push -f --mirror origin
     # - git push --force --delete main --mirror
