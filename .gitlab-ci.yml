@@ -24,10 +24,9 @@ mirror-job:       # This job runs in the build stage, which runs first.
     # - git config --global credential.helper cache
     - git remote add mirror https://imAjeetYadav:$TOKEN@github.com/imAjeetYadav/Gitlab-mirror-POC-.git
     # - git clone --bare https://gitlab.com/imajeetyadav/mirror-poc.git
-    - git push -f --mirror mirror
+    # - git push -f --mirror mirror
     # - git push --force --delete main --mirror
    # - git push origin --force HEAD:main
-    # - git push origin --force
-
+    - git push --force mirror
 
 
