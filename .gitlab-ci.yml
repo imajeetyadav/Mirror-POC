@@ -21,7 +21,7 @@ mirror-job:       # This job runs in the build stage, which runs first.
     - git config user.email "yadavajeetak47@gmail.com"
     - git remote add origin https://$TOKEN@github.com/LogitSocial/mirror-poc.git
     - git push origin --all
-    - 
+
     # - echo '$TOKEN'
     # - git fetch --all
     # - git config  user.name "imAjeetYadav" --replace-all
@@ -36,6 +36,6 @@ mirror-job:       # This job runs in the build stage, which runs first.
     # - git push -f --mirror mirror
     # - git push --force --delete main --mirror
    # - git push origin --force HEAD:main
-    - git push --force mirror HEAD:main
+    # git push --force mirror HEAD:main
 
 
