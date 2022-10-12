@@ -34,7 +34,7 @@ mirror-job:       # This job runs in the build stage, which runs first.
    
     # - git remote add origin https://$TOKEN@github.com/LogitSocial/mirror-poc.git
     # - git push -f https://LogitSocial:$SA_PASSWORD@github.com/LogitSocial/mirror-poc.git --all
-    - git push -f https://github.com/LogitSocial/mirror-poc.git --all
+    - git push -f git@github.com:LogitSocial/mirror-poc.git --all
 
 
 
