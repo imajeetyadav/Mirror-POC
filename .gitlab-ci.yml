@@ -4,9 +4,11 @@ before_script:
   # Setup SSH deploy keys
   - "which ssh-agent || ( apt-get install -qq openssh-client -y)"
   - eval $(ssh-agent -s)
-  - ssh-add <(echo "$SSH_PRIVATE_KEY_BASE64" | base64 -d)
-  - mkdir -p ~/.ssh
+  - ssh-add <(echo "$SSH_PRIVATE_KEY_BASE64" | base64 -d | tr -d "\r" ) 
   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+ 
 
 stages:          # List of stages for jobs, and their order of execution
   - mirror
