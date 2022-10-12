@@ -17,13 +17,13 @@ mirror-job:       # This job runs in the build stage, which runs first.
     - git branch -a
     - git fetch --all
     - git remote rm origin
+    - git $TOKEN
     - git config user.name "LogitSocial"
     - git config user.email "yadavajeetak47@gmail.com"
-    - git config user.password $TOKEN
-    - git remote add origin https://github.com/LogitSocial/mirror-poc.git
+    - git config user.password 
+    - git remote add origin https://$TOKEN@github.com/LogitSocial/mirror-poc.git
     - git push -f origin --all
 
-    # - echo '$TOKEN'
     # - git fetch --all
     # - git config  user.name "imAjeetYadav" --replace-all
     # - git config  user.email "ajeetyadav164@gmail.com" --replace-all
