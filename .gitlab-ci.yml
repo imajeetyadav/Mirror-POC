@@ -1,7 +1,8 @@
 stages:          # List of stages for jobs, and their order of execution
   - mirror
 
-
+variables:
+  SA_PASSWORD: $"$GITHUB_TOKEN"
 mirror-job:       # This job runs in the build stage, which runs first.
   stage: mirror
   script:
@@ -22,7 +23,7 @@ mirror-job:       # This job runs in the build stage, which runs first.
     - git config -l
    
     # - git remote add origin https://$TOKEN@github.com/LogitSocial/mirror-poc.git
-    - git push -f https://LogitSocial:"$GITHUB_TOKEN"@github.com/LogitSocial/mirror-poc.git --all
+    - git push -f https://LogitSocial:$SA_PASSWORD@github.com/LogitSocial/mirror-poc.git --all
 
 
 
