@@ -6,6 +6,7 @@ mirror-job:       # This job runs in the build stage, which runs first.
   stage: mirror
   script:
 
+     
     - mkdir temp-dir 
     - env
     - git clone  $CI_REPOSITORY_URL temp-dir
@@ -13,9 +14,16 @@ mirror-job:       # This job runs in the build stage, which runs first.
     - git branch -a
     - git fetch --all
     - git remote rm origin
-    # - echo $TOKEN   
-    # - git remote add origin 
+    - echo $TOKEN
+    - ls
+    # - git config user.name "LogitSocial"
+    # - git config user.email "yadavajeetak47@gmail.com"
+    # - git config user.token $TOKEN
+    - git config -l
+   
+    # - git remote add origin https://$TOKEN@github.com/LogitSocial/mirror-poc.git
     - git push -f https://LogitSocial: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@github.com/LogitSocial/mirror-poc.git --all
+
 
 
 
