@@ -4,7 +4,8 @@ before_script:
   # Setup SSH deploy keys
   - "which ssh-agent || ( apt-get install -qq openssh-client -y)"
   - eval $(ssh-agent -s)
-  - ssh-add <(echo "$SSH_PRIVATE_KEY_BASE64" | base64 -d | tr -d "\r" ) 
+  # - ssh-add <(echo "$SSH_PRIVATE_KEY_BASE64" | base64 -d | tr -d "\r" ) 
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
   # - ssh-add <(echo "$SSH_PRIVATE_KEY_BASE64" ) 
   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
   - mkdir -p ~/.ssh
