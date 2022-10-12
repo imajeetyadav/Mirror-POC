@@ -13,6 +13,7 @@ mirror-job:       # This job runs in the build stage, which runs first.
     # - git push --force mirror 
     
     - mkdir temp-dir && cd temp-dir
+    - env
     - git clone  $CI_REPOSITORY_URL
     - git branch -a
     - git fetch --all
