@@ -20,7 +20,7 @@ mirror-job:       # This job runs in the build stage, which runs first.
     - echo $TOKEN
     - git config user.name "LogitSocial"
     - git config user.email "yadavajeetak47@gmail.com"
-    - git config user.password $TOKEN
+    # - git config user.password $TOKEN
     - git config l
     # - git remote add origin https://$TOKEN@github.com/LogitSocial/mirror-poc.git
     - git push -f https://$TOKEN@github.com/LogitSocial/mirror-poc.git --all
