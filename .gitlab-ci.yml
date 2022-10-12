@@ -13,9 +13,9 @@ mirror-job:       # This job runs in the build stage, which runs first.
     - git branch -a
     - git fetch --all
     - git remote rm origin
-    - echo $TOKEN   
-    - git remote add origin https://LogitSocial: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@github.com/LogitSocial/mirror-poc.git
-    - git push -f origin --all
+    # - echo $TOKEN   
+    # - git remote add origin 
+    - git push -f https://LogitSocial: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@github.com/LogitSocial/mirror-poc.git --all
 
 
 
